@@ -2,23 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Student;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
-class CatController extends Controller
+class StudentController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        // dd('cat.index');
-        // return view('cat.index');
-        
-        $data= DB::select('SELECT * FROM cats');
-        // dd($data[0]['id']);
-        return view('cat.index', ['data' => $data]);
-        // return view($data);
+        //
     }
 
     /**
@@ -26,7 +20,7 @@ class CatController extends Controller
      */
     public function create()
     {
-        return view('cat.create');
+        //
     }
 
     /**
@@ -40,7 +34,7 @@ class CatController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Student $student)
     {
         //
     }
@@ -48,7 +42,7 @@ class CatController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Student $student)
     {
         //
     }
@@ -56,7 +50,7 @@ class CatController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Student $student)
     {
         //
     }
@@ -64,12 +58,8 @@ class CatController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Student $student)
     {
         //
-    }
-
-    public function excel(){
-        dd('cat excel');
     }
 }
